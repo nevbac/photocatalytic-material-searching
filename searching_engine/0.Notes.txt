@@ -1,0 +1,29 @@
+Notes:
+
+This is a MATLAB scripts to search for photocatalytic materials from mp_index.mat.
+Author: Jianwei Li
+Email: lijianwei0801@gmail.com
+Date : July 30, 2019
+
+
+
+mp_index.mat : mp_index file of materials project.
+
+icsd_poscar : ICSD database folder in whith all crystal structure have converted to vasp's POSCAR format
+
+import_poscar.m : Import a VASP POSCAR/CONTCAR file
+
+DirectGap.mat : "DirectGap.mat" show materials of the mp_index with direct energy gaps which are obtained by a web crawler.
+
+PeriodicTable.txt : "PeriodicTable.txt" show the atomic number, ElementSymbol, Pauling electronegativity 
+and related parameters of each element in the periodic table.
+
+mp_filter.m : "mp_filter.m" searches the "mp_index.mat" file and prints the mp_index, formula, space group, 
+e_above_hull, energy gap, Kcomp, Nsites, and unit cell volume to 'mp_filter_results.txt' 
+according to preset conditions from A to F:
+         A: formula of allowed elements
+         B: have ICSD
+         C: Ehull<=0.02
+         D: 4<=Kcomp<=6
+         E: 0<Egap<=3 eV
+         F: have direct band gap
